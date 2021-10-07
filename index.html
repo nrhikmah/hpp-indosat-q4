@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung with JS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class="bg-warning">
+    <div class="container mt-5 mb-5 p-3 card text-center" style="width: 50rem;">
+        <h5>KALKULATOR HPP INDOSAT Q4</h5>
+        <form id="myForm">
+            <div class="form-group row">
+                <label for="inputPaket" class="col-sm-2 col-form-label text-left">Paket</label>
+                <div class="col-sm-10 input-group">
+                    <select id="paket" lass="form-control" style="float: left;width: initial;">
+                        <option value="yellow1">Yellow 1GB, 7hr
+                        </option>
+                        <option value="yellow2">Yellow 1GB, 15hr</option>
+                        <option value="sachet1">Freedom Internet Sachet 1.5GB 5hr</option>
+                        <option value="sachet2">Freedom Internet Sachet 2.5GB 5hr</option>
+                        <option value="sachet4">Freedom Internet Sachet 4GB 5hr</option>
+                        <option value="sachet5">Freedom Internet Sachet 5GB 3hr</option>
+                        <option value="sachet7">Freedom Internet Sachet 7GB 5hr</option>
+                        <option value="fi3">Freedom Internet 3GB 30hr</option>
+                        <option value="fi5">Freedom Internet 5GB 30hr</option>
+                        <option value="fi13">Freedom Internet 13GB 30hr</option>
+                        <option value="fi21">Freedom Internet 42GB 30hr</option>
+                        <option value="fi25">Freedom Internet 21GB 30hr</option>
+                        <option value="fi30">Freedom Internet 30GB 30hr</option>
+                        <option value="fi42">Freedom Internet 42GB 30hr</option>
+                        <option value="fi10">Freedom Internet 10GB 60hr NEW</option>
+                        <option value="fi26">Freedom Internet 26GB 60hr NEW</option>
+                        <option value="fi4">Freedom Internet 42GB 60hr NEW</option>
+                        <option value="fi15">Freedom Internet 15GB 90hr NEW</option>
+                        <option value="fi39">Freedom Internet 39GB 90hr NEW</option>
+                        <option value="fi63">Freedom Internet 63GB 90hr NEW</option>
+                        <option value="fkh7">FKH Unlimited 7GB 7hr</option>
+                        <option value="fkh14">FKH Unlimited 14GB 14hr</option>
+                        <option value="fkh28">FKH Unlimited 28GB 28hr</option>
+                        <option value="fc6">Freedom Combo 6GB 30hr</option>
+                        <option value="fc10">Freedom Combo 10GB 30hr</option>
+                        <option value="fc20">Freedom Combo 20GB 30hr</option>
+                        <option value="fc30">Freedom Combo 30GB 30hr</option>
+                        <option value="fc40">Freedom Combo 40GB 30hr</option>
+                        <option value="fu1">FU UNLIMITED 1GB 30hr</option>
+                        <option value="fu2">FU UNLIMITED 2GB 30hr</option>
+                        <option value="fu3">FU UNLIMITED 3GB 30hr</option>
+                        <option value="fu7">FU UNLIMITED 7GB 30hr</option>
+                        <option value="fu10">FU UNLIMITED 10GB 30hr</option>
+                        <option value="fujb">FU UNLIMITED JUMBO 30hr</option>
+                        <option value="sp16">SP 16 GB</option>
+                        <option value="sp8">SP 8 GB</option>
+                        <option value="sp2">SP 2 GB</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPaket" class="col-sm-2 col-form-label text-left">Program</label>
+                <div class="col-sm-10 input-group">
+                    <select id="program" class="form-control" style="float: left;width: initial;">
+                        <option>-</option>
+                        <option value="jwr100k">Jawara 100K</option>
+                        <option value="jwr1jt">Jawara 1 juta</option>
+                        <option value="jwr10jt">Jawara 10 juta</option>
+                        <option value="jwr100jt">Jawara 100 juta</option>
+                        <option value="sltbvoucher">Sultan Basic (Voucher)</option>
+                        <option value="sltbrebuy">Sultan Basic (Isi Ulang)</option>
+                        <option value="sltp125voucher">Sultan Premium 125juta (Voucher)</option>
+                        <option value="sltp125rebuy">Sultan Premium 125juta (Isi Ulang)</option>
+                        <option value="sltp1mvoucher">Sultan Premium 1M (Voucher)</option>
+                        <option value="sltp1mrebuy">Sultan Premium 1M (Isi Ulang)</option>
+                        <option value="sltp4mvoucher">Sultan Premium 4M (Voucher)</option>
+                        <option value="sltp4mrebuy">Sultan Premium 4M (Isi Ulang)</option>
+                    </select>
+                </div>
+            </div>
+              <div class="form-group row">
+                <label for="inputmobo" class="col-sm-2 col-form-label text-left">Harga Mobo </label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="mobo">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputmobo" class="col-sm-2 col-form-label text-left">Harga SP/Voucher </label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="sp">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputpcs" class="col-sm-2 col-form-label text-left">Jumlah pcs </label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="pcs">
+                </div>
+              </div>
+            <button type="button" class="btn btn-primary" onclick="hitung()">Hitung</button>
+            <button type="button" class="btn btn-danger" onclick="resetButton()">Reset</button>
+        </form>
+
+        <div id="display">
+            <table>
+                <tr>
+                    <td class="text-left">
+                        Total Modal
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        Rp.<span id="modal"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="text-left">
+                        HPP + Pajak
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        RP.<span id="hasil2"></span>
+                    </td>
+                </tr>      
+                <!-- <tr>
+                    <td class="text-left">
+                        Detail cashback
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left">
+                        Insentif Jawara 
+                    </td>
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        <span id="hasil2"></span>
+                    </td>
+                </tr>             -->
+            </table>
+        </div>
+
+
+    </div>
+    <footer class="text-center">
+        Made by : Nur Hikmah Intern Kampus Merdeka Batch 2 :)
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
